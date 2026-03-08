@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 
 :root {
-    var(--deep-dark-blue): #050814; 
+    --deep-dark-blue: #050814; 
     --btn-green: #a8e6cf; 
     --light-green-bg: #eaf4f0; 
     --text-white: #ffffff;
@@ -249,7 +249,7 @@ body::after {
     letter-spacing: 1px;
 }
 
-/* Текст теперь будет белым для лучшей читаемости */
+/* Текст теперь будет белым для лучшей читаемости в content-box */
 .content-box p, .content-box ul, .content-box li {
     line-height: 1.8;
     color: #ffffff; 
@@ -279,7 +279,7 @@ body::after {
 .img-side img {
     max-width: 100%;
     width: 100%;
-    height: auto; /* Позволяет картинкам сохранять свои пропорции */
+    height: auto;
     border-radius: 15px;
     border: 2px solid var(--btn-green);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -293,6 +293,20 @@ body::after {
     border: 1px solid rgba(168, 230, 207, 0.1);
     position: relative;
     overflow: hidden;
+}
+
+/* --- МАГИЯ: БЕЛЫЙ ТЕКСТ ДЛЯ БЛОКОВ С СЕРТИФИКАТАМИ --- */
+.course-item h2 {
+    color: var(--btn-green);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.course-item p {
+    color: #ffffff; /* Белый цвет текста */
+    line-height: 1.7;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
