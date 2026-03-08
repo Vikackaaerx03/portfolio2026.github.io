@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +29,10 @@
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Computer Vision</span>
                 <span class="tech-tag">YOLO</span>
+                <span class="tech-tag">Machine Learning</span>
                 <span class="tech-tag">HTML/CSS</span>
             </div>
-            <p>Developed an intelligent system for the automatic analysis of dental X-rays. This project features a local web application where users can upload raw dental X-ray images. Once uploaded, a trained YOLO-based computer vision model processes the image to identify and graphically highlight diseased or unhealthy teeth. This acts as a powerful diagnostic assistant for dental professionals.</p>
+            <p>Developed an intelligent system for the automatic analysis of dental X-rays. This project features a local web application where users can upload raw dental X-ray images. Once uploaded, a custom-trained YOLO object detection model processes the image to precisely identify, locate, and graphically highlight diseased or unhealthy teeth with bounding boxes. This automated visual analysis acts as a powerful, real-time diagnostic assistant for dental professionals, significantly speeding up the initial review process and improving accuracy.</p>
             
             <div class="comparison-grid">
                 <div>
@@ -41,7 +41,7 @@
                 </div>
                 <div>
                     <img src="../../img/res_2.jpg" alt="Processed X-ray Result">
-                    <div class="image-caption">AI Detection Result</div>
+                    <div class="image-caption">AI Detection Result (YOLO)</div>
                 </div>
             </div>
         </div>
@@ -53,15 +53,16 @@
                     <div class="tech-stack-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">RAG Architecture</span>
-                        <span class="tech-tag">SQLite</span>
                         <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">JSON</span>
                     </div>
-                    <p>A smart Telegram bot powered by Retrieval-Augmented Generation (RAG) created specifically to assist a TikTok content creator. The bot acts as a personal manager: it can answer account-specific questions, brainstorm new ideas, and help plan weekly content schedules based on the author's history stored securely in a local SQLite database.</p>
+                    <p>A smart Telegram bot powered by Retrieval-Augmented Generation (RAG) created specifically to assist a TikTok content creator. The bot acts as a personal manager: it can answer account-specific questions, brainstorm new ideas, and help plan weekly content schedules. It leverages a local SQLite database (<code>knowledge.db</code>) to securely store conversation history and structured data, alongside JSON files (<code>account_info.json</code>, <code>your_content.json</code>) for flexible configuration and content management.</p>
                     
                     <a href="telegram-bots.html" class="action-btn">See more info about the Chat Bot →</a>
                 </div>
                 <div class="img-side">
-                    <img src="../../img/my_rag_bot_1.jpg" alt="RAG Bot Interface">
+                    <img src="../../img/my_rag_bot_1.png" alt="RAG Bot Interface">
                 </div>
             </div>
         </div>
