@@ -1,19 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 
 :root {
-    /* Глубокий хвойно-зеленый (вместо темно-синего) */
     --deep-dark-green: #112a22; 
-    
-    /* Яркий мятный для кнопок и акцентов */
     --btn-green: #a8e6cf; 
-    
-    /* Нежно-зеленый для главного фона */
     --light-green-bg: #eaf4f0; 
-    
     --text-white: #ffffff;
     --text-muted: #9ab3a8;
-    
-    /* Полупрозрачный нежно-зеленый для нижнего блока */
     --light-green-transparent: rgba(234, 244, 240, 0.85); 
 }
 
@@ -24,7 +16,7 @@ body {
     background-color: transparent; 
 }
 
-/* ФОНОВОЕ ИЗОБРАЖЕНИЕ НА ВЕСЬ САЙТ */
+/* ФОН НА ВЕСЬ САЙТ */
 body::after {
     content: "";
     position: fixed;
@@ -33,11 +25,11 @@ body::after {
     width: 100%;
     height: 100%;
     z-index: -2;
-    background-image: url('background.jpg'); /* Ссылка на твой файл фона */
+    background-image: url('background.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.3; /* Прозрачность 30% */
+    opacity: 0.3; 
 }
 
 .bg-image-preloader { display: none; }
@@ -52,11 +44,31 @@ body::after {
 
 /* --- ВЕРХНИЙ БЛОК --- */
 .hero-section {
+    position: relative; /* Нужно для фона */
     background-color: var(--deep-dark-green);
     color: var(--text-white);
     padding: 40px 20px 80px;
     text-align: center;
     border-radius: 0 0 50px 50px;
+    overflow: hidden; /* Чтобы фото не вылезало за закругленные края */
+}
+
+/* Магия: Фото с 40% прозрачностью для верхнего блока */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Ровно 40% прозрачности */
+    z-index: 0;
+}
+
+/* Поднимаем весь текст и фото над фоном */
+.hero-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .top-logo {
@@ -99,7 +111,7 @@ body::after {
 .avatar-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ссылка на файл avatar.jpg прописана в HTML */
+    object-fit: cover; 
 }
 
 .primary-btn {
@@ -138,7 +150,9 @@ body::after {
     gap: 20px;
 }
 
+/* --- КАРТОЧКИ (8 КНОПОК) --- */
 .dark-card {
+    position: relative; /* Нужно для фона */
     background-color: var(--deep-dark-green);
     color: var(--text-white);
     border-radius: 24px;
@@ -151,11 +165,36 @@ body::after {
     justify-content: center;
     transition: transform 0.3s ease, border 0.3s ease;
     border: 2px solid transparent;
+    overflow: hidden; /* Чтобы фото не вылезало за края карточки */
+}
+
+/* Магия: Фото с 40% прозрачностью для каждой кнопки */
+.dark-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Ровно 40% прозрачности */
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Поднимаем текст в карточках над фоном */
+.dark-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .dark-card:hover {
     transform: translateY(-8px);
     border: 2px solid var(--btn-green);
+}
+
+/* При наведении фон внутри карточки становится чуть ярче */
+.dark-card:hover::before {
+    opacity: 0.55; 
 }
 
 .card-icon {
