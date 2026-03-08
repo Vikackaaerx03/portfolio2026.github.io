@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 
 :root {
-    --deep-dark-green: #112a22; 
+    /* Возвращаем очень глубокий темно-синий (почти черный) */
+    --deep-dark-blue: #050814; 
+    
+    /* Оставляем мятный для кнопок и акцентов */
     --btn-green: #a8e6cf; 
     --light-green-bg: #eaf4f0; 
     --text-white: #ffffff;
@@ -12,11 +15,11 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    color: var(--deep-dark-green);
+    color: var(--deep-dark-blue);
     background-color: transparent; 
 }
 
-/* ФОН НА ВЕСЬ САЙТ */
+/* ФОН НА ВЕСЬ САЙТ (5%) */
 body::after {
     content: "";
     position: fixed;
@@ -29,7 +32,7 @@ body::after {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.3; 
+    opacity: 0.05; /* Ровно 5% прозрачности */
 }
 
 .bg-image-preloader { display: none; }
@@ -45,7 +48,7 @@ body::after {
 /* --- ВЕРХНИЙ БЛОК --- */
 .hero-section {
     position: relative; 
-    background-color: var(--deep-dark-green);
+    background-color: var(--deep-dark-blue); /* Темно-синий фон */
     color: var(--text-white);
     padding: 40px 20px 80px;
     text-align: center;
@@ -53,7 +56,7 @@ body::after {
     overflow: hidden; 
 }
 
-/* Магия: Фото с 7% прозрачностью для верхнего блока */
+/* Магия: Фото с 5% прозрачностью для верхнего блока */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -61,7 +64,7 @@ body::after {
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.07; /* Ровно 7% прозрачности */
+    opacity: 0.05; /* Ровно 5% прозрачности */
     z-index: 0;
 }
 
@@ -98,7 +101,7 @@ body::after {
 .portrait-container {
     width: 160px;
     height: 160px;
-    background-color: #1a3b30;
+    background-color: #0a0f24; /* Темно-синий фон-заглушка под фото */
     border: 3px solid var(--btn-green);
     border-radius: 50%;
     margin: 0 auto 40px auto;
@@ -116,7 +119,7 @@ body::after {
 
 .primary-btn {
     background-color: var(--btn-green);
-    color: var(--deep-dark-green);
+    color: var(--deep-dark-blue);
     border: none;
     padding: 18px 45px;
     border-radius: 30px;
@@ -153,7 +156,7 @@ body::after {
 /* --- КАРТОЧКИ (8 КНОПОК) --- */
 .dark-card {
     position: relative; 
-    background-color: var(--deep-dark-green);
+    background-color: var(--deep-dark-blue); /* Темно-синий фон */
     color: var(--text-white);
     border-radius: 24px;
     padding: 40px 20px;
@@ -168,7 +171,7 @@ body::after {
     overflow: hidden; 
 }
 
-/* Магия: Фото с 7% прозрачностью для каждой кнопки */
+/* Магия: Фото с 5% прозрачностью для каждой кнопки */
 .dark-card::before {
     content: "";
     position: absolute;
@@ -176,7 +179,7 @@ body::after {
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.07; /* Ровно 7% прозрачности */
+    opacity: 0.05; /* Ровно 5% прозрачности */
     z-index: 0;
     transition: opacity 0.3s ease;
 }
@@ -192,9 +195,9 @@ body::after {
     border: 2px solid var(--btn-green);
 }
 
-/* При наведении фон внутри карточки становится чуть заметнее (15%) */
+/* При наведении фон внутри карточки становится лишь чуточку заметнее (12%) */
 .dark-card:hover::before {
-    opacity: 0.15; 
+    opacity: 0.12; 
 }
 
 .card-icon {
