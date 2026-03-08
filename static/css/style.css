@@ -1,80 +1,150 @@
-/* Основные переменные дизайна */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
 :root {
-    --dark-bg: #0a0b1e;
-    --card-pink: #fde4ec;
-    --accent-pink: #f9a8d4;
+    --deep-dark-blue: #080a13;
+    --cream-pink: #fcf4f6;
+    --btn-pink: #f9c8d4;
     --text-white: #ffffff;
-    --text-dark: #1f2937;
+    --text-muted: #8b92a5;
 }
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #fdf2f8; /* Мягкий розовый фон всей страницы */
+    background-color: var(--cream-pink); /* Soft bottom background */
+    color: var(--deep-dark-blue);
 }
 
-/* Hero Section (темная часть) */
-.hero {
-    background-color: var(--dark-bg);
+.portfolio-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- TOP HERO SECTION --- */
+.hero-section {
+    background-color: var(--deep-dark-blue);
     color: var(--text-white);
-    padding: 60px 10%;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    padding: 40px 20px 80px;
     text-align: center;
+    border-radius: 0 0 50px 50px; /* Smooth rounded bottom */
 }
 
-.brand-name {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--accent-pink);
+.top-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-white);
+    margin-bottom: 50px;
 }
 
-.hero-cat {
-    width: 100%;
-    max-width: 400px;
-    margin: 30px 0;
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
 }
 
-/* Сетка из 8 кнопок */
-.services-grid {
+.slogan {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.portrait-container {
+    width: 160px;
+    height: 160px;
+    background-color: #121626;
+    border: 3px solid var(--btn-pink);
+    border-radius: 50%;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.primary-btn {
+    background-color: var(--btn-pink);
+    color: var(--deep-dark-blue);
+    border: none;
+    padding: 18px 45px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(249, 200, 212, 0.2);
+}
+
+/* --- BOTTOM SECTION (8 CARDS) --- */
+.bottom-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* Desktop: 4 columns */
     gap: 20px;
-    padding: 40px 10%;
 }
 
-.service-card {
-    background: var(--text-white);
-    padding: 30px;
-    border-radius: 20px;
+.dark-card {
+    background-color: var(--deep-dark-blue);
+    color: var(--text-white);
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
     text-decoration: none;
-    color: var(--text-dark);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.service-card:hover {
-    background: var(--accent-pink);
-    transform: translateY(-10px);
-    color: white;
+.dark-card:hover {
+    transform: translateY(-8px);
+    border: 2px solid var(--btn-pink);
 }
 
-.service-card h3 {
-    margin: 15px 0 5px 0;
-    font-family: 'Playfair Display', serif;
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-/* Кнопка записи */
-.btn-main {
-    background: var(--accent-pink);
-    color: var(--dark-bg);
-    padding: 15px 30px;
-    border-radius: 50px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
+.dark-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 8px 0;
+}
+
+.dark-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --- MOBILE ADAPTATION --- */
+@media (max-width: 1024px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-content h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 600px) {
+    /* Transforms into the narrow vertical mobile view */
+    .cards-grid { grid-template-columns: 1fr; }
+    .hero-section { border-radius: 0 0 30px 30px; padding: 30px 20px 60px; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .bottom-section { padding: 50px 20px; }
 }
