@@ -44,16 +44,16 @@ body::after {
 
 /* --- ВЕРХНИЙ БЛОК --- */
 .hero-section {
-    position: relative; /* Нужно для фона */
+    position: relative; 
     background-color: var(--deep-dark-green);
     color: var(--text-white);
     padding: 40px 20px 80px;
     text-align: center;
     border-radius: 0 0 50px 50px;
-    overflow: hidden; /* Чтобы фото не вылезало за закругленные края */
+    overflow: hidden; 
 }
 
-/* Магия: Фото с 40% прозрачностью для верхнего блока */
+/* Магия: Фото с 7% прозрачностью для верхнего блока */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -61,7 +61,7 @@ body::after {
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.4; /* Ровно 40% прозрачности */
+    opacity: 0.07; /* Ровно 7% прозрачности */
     z-index: 0;
 }
 
@@ -152,7 +152,7 @@ body::after {
 
 /* --- КАРТОЧКИ (8 КНОПОК) --- */
 .dark-card {
-    position: relative; /* Нужно для фона */
+    position: relative; 
     background-color: var(--deep-dark-green);
     color: var(--text-white);
     border-radius: 24px;
@@ -165,10 +165,10 @@ body::after {
     justify-content: center;
     transition: transform 0.3s ease, border 0.3s ease;
     border: 2px solid transparent;
-    overflow: hidden; /* Чтобы фото не вылезало за края карточки */
+    overflow: hidden; 
 }
 
-/* Магия: Фото с 40% прозрачностью для каждой кнопки */
+/* Магия: Фото с 7% прозрачностью для каждой кнопки */
 .dark-card::before {
     content: "";
     position: absolute;
@@ -176,7 +176,7 @@ body::after {
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.4; /* Ровно 40% прозрачности */
+    opacity: 0.07; /* Ровно 7% прозрачности */
     z-index: 0;
     transition: opacity 0.3s ease;
 }
@@ -192,9 +192,9 @@ body::after {
     border: 2px solid var(--btn-green);
 }
 
-/* При наведении фон внутри карточки становится чуть ярче */
+/* При наведении фон внутри карточки становится чуть заметнее (15%) */
 .dark-card:hover::before {
-    opacity: 0.55; 
+    opacity: 0.15; 
 }
 
 .card-icon {
